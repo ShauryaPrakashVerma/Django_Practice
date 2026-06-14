@@ -3,3 +3,10 @@ __pycache__/
 
 media/
 
+django/
+
+db.sqlite3
+
+.env
+
+.DS_Store
