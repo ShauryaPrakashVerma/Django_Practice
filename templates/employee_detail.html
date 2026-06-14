@@ -1,0 +1,126 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Profile - Jane Doe</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+</head>
+<body>
+
+<div class="container">
+
+    <header class="profile-header">
+        <div class="profile-avatar"><img src="{{ employee.photo.url }}" alt="Employee Avatar"></div>
+        <div class="profile-title">
+            <h1>{{ employee.first_name }} {{ employee.last_name }}</h1>
+            <p>{{ employee.designation }}</p>
+        </div>
+    </header>
+
+    <div class="profile-grid">
+        
+        <main>
+            <div class="card">
+                <div class="card-title">
+                    <span>Personal Information</span>
+                </div>
+                <div class="info-group">
+                    <div class="info-item">
+                        <div class="info-label">Full Name</div>
+                        <div class="info-value">{{ employee.first_name }} {{ employee.last_name }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Date of Birth</div>
+                        <div class="info-value">October 14, 1992</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Email Address</div>
+                        <div class="info-value">{{ employee.email_address }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Phone Number</div>
+                        <div class="info-value">{{ employee.phone_number }}</div>
+                    </div>
+                    <div class="info-item full-width">
+                        <div class="info-label">Current Address</div>
+                        <div class="info-value">123 Innovation Way, Suite 400, Tech City, CA 94016</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <span>Employment History & Role</span>
+                </div>
+                <div class="info-group">
+                    <div class="info-item">
+                        <div class="info-label">Department</div>
+                        <div class="info-value">Product & Design</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Line Manager</div>
+                        <div class="info-value">Marcus Sterling (VP of Product)</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Date of Joining</div>
+                        <div class="info-value">March 15, 2021</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Work Location</div>
+                        <div class="info-value">Hybrid (San Francisco Office)</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside>
+            <div class="card">
+                <div class="card-title">
+                    <span>Status</span>
+                    <span class="badge badge-active">Active</span>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Employee ID</div>
+                    <div class="info-value">#EMP-2021-089</div>
+                </div>
+                <div class="info-item margin-top-sm">
+                    <div class="info-label">Employment Type</div>
+                    <div class="info-value">Full-Time Regular</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <span>Emergency Contact</span>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Contact Name</div>
+                    <div class="info-value">Robert Doe</div>
+                </div>
+                <div class="info-item margin-top-sm">
+                    <div class="info-label">Relationship</div>
+                    <div class="info-value">Spouse</div>
+                </div>
+                <div class="info-item margin-top-sm">
+                    <div class="info-label">Phone</div>
+                    <div class="info-value">+1 (555) 987-6543</div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <div class="actions">
+        <a href="{% url 'homepage' %}" target="_blank">
+            <button class="btn btn-outline">Back to Home</button>
+        </a>
+        <button class="btn btn-primary">Edit Profile</button>
+    </div>
+
+</div>
+
+</body>
+</html>
