@@ -1,0 +1,97 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clean & Modern Layout</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav-container">
+        <a href="#" class="logo">Brand</a>
+        <ul class="nav-links">
+          <li><a href="#">Features</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <img src="{% static 'images/download (6).jpg' %}" alt="" id="image">
+
+    <section class="hero">
+      <h1>Clean, Simple, & Semantic</h1>
+      <p>
+        A ready-to-use HTML template crafted with clean CSS variables, an
+        adaptive flex layout, and standard modern typography.
+      </p>
+      <a href="#" class="btn">Explore Layout</a>
+    </section>
+
+    <main class="main-content">
+      <div class="grid">
+        <article class="card">
+          <h2>Semantic Elements</h2>
+          <p>
+            Built using native tags like header, nav, section, main, and footer
+            to give your document an excellent structural outline.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>No Framework Needed</h2>
+          <p>
+            Pure HTML and vanilla CSS organized via modern CSS Grid
+            configurations. Perfect for lightweight, fast-loading projects.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Fully Responsive</h2>
+          <p>
+            The column structure smoothly drops down to adapt beautifully to
+            smartphones, tablets, laptops, and wide monitors.
+          </p>
+        </article>
+      </div>
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++ -->
+
+    <div class="container mt-4">
+    <h1 class="mb-4">Employee List</h1>
+
+
+    <div class="table-card">
+      <table class="table">
+        <thead>
+            <tr>
+                <th>sr. no.</th>
+                <th>Full Name</th>
+                <th>Designation</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for emp in employees %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ emp.first_name }}</td>
+                <td>{{ emp.designation }}</td>
+                <td>{{ emp.phone_number }}</td>
+              </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    
+    </div>
+
+    <!-- ============================================== -->
+
+    <footer>
+      <p>&copy; 2026 Brand Template. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
